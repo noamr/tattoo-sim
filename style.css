@@ -1,0 +1,146 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #eee;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #2a2a2a;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.sidebar h1 {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+    color: #fff;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+}
+
+.button-row button {
+    flex: 1;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 4px;
+    min-height: 50px;
+}
+
+.gallery-item {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    background: #333;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: grab;
+    transition: border-color 0.2s;
+}
+
+.gallery-item:hover {
+    border-color: #666;
+}
+
+.gallery-item:active {
+    cursor: grabbing;
+}
+
+.control-group label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+input[type="file"] {
+    background: #333;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #444;
+    font-size: 0.8rem;
+}
+
+button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.slider-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.slider-group label {
+    flex-shrink: 0;
+}
+
+.canvas-wrapper {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+    background-image: radial-gradient(#222 1px, transparent 1px);
+    background-size: 20px 20px;
+    overflow: hidden;
+}
+
+canvas {
+    box-shadow: 0 0 20px rgba(0,0,0,1);
+}
+
+.instructions {
+    margin-top: auto;
+    font-size: 0.8rem;
+    color: #888;
+    line-height: 1.4;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #444;
+    width: 100%;
+}

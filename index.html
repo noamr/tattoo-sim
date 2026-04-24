@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tattoo Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>Tattoo Sim</h1>
+            
+            <div class="control-group">
+                <label for="skin-upload">1. Upload Skin Image</label>
+                <input type="file" id="skin-upload" accept="image/*">
+            </div>
+
+            <div class="control-group">
+                <label for="tattoo-upload">2. Upload Tattoo Designs</label>
+                <input type="file" id="tattoo-upload" accept="image/*" multiple title="Add designs to your gallery">
+                <div id="tattoo-gallery" class="gallery">
+                    <!-- Uploaded tattoos will appear here -->
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="control-group">
+                <label>Canvas Controls</label>
+                <div class="button-row">
+                    <button id="undo" title="Undo (Ctrl+Z)">Undo</button>
+                    <button id="redo" title="Redo (Ctrl+Y)">Redo</button>
+                </div>
+                <button id="zoom-in">Zoom In</button>
+                <button id="zoom-out">Zoom Out</button>
+                <button id="reset-view">Reset View</button>
+                <button id="clear-canvas" style="background-color: #555;">Clear Canvas</button>
+            </div>
+
+            <div class="control-group">
+                <label>Export</label>
+                <button id="download" style="background-color: #2e7d32;">Download Image</button>
+            </div>
+
+            <div class="control-group">
+                <label>Tattoo Effects</label>
+                <button id="apply-classic-ink" title="Makes it look like aged ink">Apply Classic Ink</button>
+                <button id="thicken-ink" title="Makes the tattoo lines thicker">Thicken Ink</button>
+                <button id="remove-bg" title="Removes white background">Remove White BG</button>
+                <button id="delete-selected" style="background-color: #833;">Delete Selected</button>
+                <div class="slider-group">
+                    <label for="opacity">Opacity</label>
+                    <input type="range" id="opacity" min="0" max="1" step="0.1" value="0.8">
+                </div>
+            </div>
+
+            <div class="instructions">
+                <p><strong>Controls:</strong></p>
+                <ul>
+                    <li>Drag, resize, and rotate tattoos directly on the skin.</li>
+                    <li><strong>Alt + Drag</strong> to pan the canvas.</li>
+                    <li><strong>Mouse Wheel</strong> to zoom.</li>
+                    <li>Use "Classic Ink" to simulate aged ink.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="canvas-wrapper" id="wrapper">
+            <canvas id="tattoo-canvas"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
